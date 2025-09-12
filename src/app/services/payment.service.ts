@@ -32,8 +32,8 @@ export interface PaymentRequest {
 })
 export class PaymentService {
 
-  // ✅ The final correct URL for the backend API
-  private apiUrl = 'http://localhost:8080/api/v1/payments';
+  
+  private apiUrl = 'https://govflow-trackerbackend-production-f7ba.up.railway.app/api/v1/payments';
 
   constructor(private http: HttpClient) { }
 
