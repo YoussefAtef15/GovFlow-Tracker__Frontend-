@@ -89,7 +89,7 @@ export interface FullTaskDetails {
   providedIn: 'root'
 })
 export class EmployeeService {
-  private baseUrl = 'http://localhost:8080/api/v1/employee';
+  private baseUrl = 'https://govflow-trackerbackend-production-f7ba.up.railway.app/api/v1/employee';
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
