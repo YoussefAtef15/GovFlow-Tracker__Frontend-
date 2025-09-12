@@ -54,7 +54,7 @@ export interface PaymentSummary {
   providedIn: 'root'
 })
 export class ServiceRequestService {
-  private backendUrl = 'http://localhost:8080/api/v1';
+  private backendUrl = 'https://govflow-trackerbackend-production-f7ba.up.railway.app/api/v1';
   private apiUrl = `${this.backendUrl}/requests`;
   private paymentsUrl = `${this.backendUrl}/payments`;
   private filesUrl = `${this.backendUrl}/files`;
