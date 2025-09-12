@@ -15,7 +15,7 @@ export interface User extends UserProfile {
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:8080/api/auth';
+  private baseUrl = 'https://govflow-trackerbackend-production-f7ba.up.railway.app/api/auth';
   currentUser = signal<User | null>(null);
   private storage: Storage | null = null;
 
