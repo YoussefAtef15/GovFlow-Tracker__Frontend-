@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
-import { tap } from 'rxjs/operators'; // ✅ تم استيراد tap
+import { tap } from 'rxjs/operators'; 
 import { AuthService } from './auth.service';
 
 export interface Notification {
@@ -23,7 +23,7 @@ export interface NotificationPayload {
   providedIn: 'root'
 })
 export class NotificationService {
-  private baseUrl = 'http://localhost:8080/api';
+  private baseUrl = 'https://govflow-trackerbackend-production-f7ba.up.railway.app/api';
 
   // A Subject to broadcast notification messages
   private notificationSubject = new Subject<NotificationPayload>();
@@ -31,7 +31,7 @@ export class NotificationService {
   // A public observable that components can subscribe to
   public notification$ = this.notificationSubject.asObservable();
 
-  // ✅ START: الإضافة المطلوبة
+  
   // Subject لإعلام المشتركين بحدوث تغيير في الإشعارات
   private _notificationsChanged = new Subject<void>();
 
@@ -73,7 +73,7 @@ export class NotificationService {
     return this.http.get<Notification[]>(`${this.baseUrl}/notifications`, { headers });
   }
 
-  // ✅ START: تم تعديل الدوال التالية لإرسال إشعار بالتغيير
+  //  تم تعديل الدوال التالية لإرسال إشعار بالتغيير
   markAllAsRead(): Observable<void> {
     const token = this.authService.getToken();
     const headers = new HttpHeaders({ 'Authorization': `Bearer ${token}` });
@@ -97,5 +97,5 @@ export class NotificationService {
       tap(() => this._notificationsChanged.next()) // إرسال إشعار بعد نجاح العملية
     );
   }
-  // ✅ END: نهاية التعديل
+  
 }
