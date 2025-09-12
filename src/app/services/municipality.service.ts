@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-// ✅ Renamed the interface to 'MunicipalityServiceData'
 export interface MunicipalityServiceData {
   id: string;
   title: string;
@@ -20,9 +19,9 @@ export class MunicipalityService {
 
   constructor() { }
 
-  // ✅ The function now returns the renamed interface type
+  
   getServices(): Observable<MunicipalityServiceData[]> {
-    // ✅ The mock data array now uses the renamed interface type
+    
     const mockServices: MunicipalityServiceData[] = [
       {
         id: 'MUN-01',
